@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 title">
+      <h1>Projet Lifen</h1>
+      <p>Challenge pour recrutement, niveau 5</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 bloc">
+      <h2>Liste des médecins</h2>
+      <% unless @workers.empty? %>
+        <table class="table">
+          <tr>
+            <th>Prénom</th>
+            <th>Grade</th>
+            <th>Nombre de gardes</th>
+          </tr>
+          <% @workers.each do |w| %>
+            <tr>
+              <td><%= w.first_name %></td>
+              <td><%= w.status %></td>
+              <td>Encore 0</td>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <p>Pas encore de de medecin</p>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-6 bloc">
+      <h2>Liste des gardes à l'hopital</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6 bloc">
+      <h2>Ajouter un nouveau médecin</h2>
+        <%= simple_form_for(@worker) do |f| %>
+          <%= f.input :first_name, label: "Prénom" %>
+          <%= f.input :status, label: "Grade", collection: ["medic", "interne", "interim"], as: :select  %>
+          <%= f.submit "Nouveau médecin" %>
+        <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-6 bloc">
+      <h2>Ajouter une nouvelle garde</h2>
+    </div>
+  </div>
+</div>
+
