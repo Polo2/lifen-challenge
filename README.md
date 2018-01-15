@@ -1,24 +1,24 @@
-# README
+# Lifen Backend Ruby Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ Looking for a job? Check out our [open positions](https://honestica.welcomekit.co/).
 
-Things you may want to cover:
+## Guidelines
 
-* Ruby version
+- clone this repo (do **not** fork it)
+- solve the levels in ascending order
+- commit your code at the end of each level
+- once you are done, ping someone from Lifen (ideally via our jobs page)
 
-* System dependencies
+You can have a look at the higher levels, but please do the **simplest thing** that could work for the level you're currently solving.
 
-* Configuration
+Disclaimer: the levels become more complex over time, so you will probably have to re-use some code and adapt it to the new requirements.
+A good way to solve this is by using OOP and adding new layers of abstraction only when they become necessary.
+Don't hesitate to write [shameless code](http://red-badger.com/blog/2014/08/20/i-spent-3-days-with-sandi-metz-heres-what-i-learned/) at first, and then refactor it in the next levels.
 
-* Database creation
+For higher levels we are interested in seeing code that is:
+- clean
+- extensible
+- robust (don't overlook edge cases, use exceptions where needed, ...)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
