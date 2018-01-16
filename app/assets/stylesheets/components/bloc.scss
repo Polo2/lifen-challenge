@@ -11,7 +11,26 @@
 }
 
 .title {
-  height : 100px;
+  background-color: #3B64B1;
+  color: white;
+  min-height : 100px;
+  margin-bottom: 15px;
+  border: 1px solid #00000014 !important;
+  box-shadow: 2px 2px 2px #00000005;
+  border-radius: 5px;
+  padding: 20px ;
+  text-align: center;
+}
+
+.no-padding {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.footer {
+  background-color: #3B64B1;
+  color: white;
+  min-height : 70px;
   margin-bottom: 15px;
   border: 1px solid #00000014 !important;
   box-shadow: 2px 2px 2px #00000005;
@@ -30,6 +49,15 @@ p {
 
 h1 {
  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #f1f5f9;
 }
 
 .table {

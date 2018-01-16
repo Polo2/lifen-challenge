@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 title">
-      <h1>Projet Lifen</h1>
-      <p>Challenge pour recrutement, niveau 5</p>
+    <div class="col-xs-12 no-padding">
+      <div class="title">
+        <h1>Projet Lifen</h1>
+        <p>Challenge pour recrutement, niveau 5</p>
+      </div>
     </div>
     <div class="col-xs-12 col-sm-6 bloc">
       <h2>Liste des médecins</h2>
       <% unless @workers.empty? %>
         <table class="table">
           <tr>
-            <th>Prénom</th>
-            <th>Grade</th>
+            <th>Nom</th>
+            <th>Statut</th>
             <th>Nombre de gardes</th>
           </tr>
           <% @workers.each do |w| %>
             <tr>
               <td><%= w.first_name %></td>
               <td><%= w.status %></td>
-              <td>Encore 0</td>
+              <td><%= w.shifts.count %></td>
             </tr>
           <% end %>
         </table>
@@ -27,6 +29,24 @@
     </div>
     <div class="col-xs-12 col-sm-6 bloc">
       <h2>Liste des gardes à l'hopital</h2>
+      <% unless @shifts.empty? %>
+        <table class="table">
+          <tr>
+            <th>Date</th>
+            <th>Medecin</th>
+            <th>Statut</th>
+          </tr>
+          <% @shifts.each do |s| %>
+            <tr>
+              <td><%= s.start_date %></td>
+              <td><%= s.worker.first_name %></td>
+              <td><%= s.worker.status %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% else %>
+        <p>Pas encore de de medecin</p>
+      <% end %>
     </div>
     <div class="col-xs-12 col-sm-6 bloc">
       <h2>Ajouter un nouveau médecin</h2>
@@ -38,6 +58,16 @@
     </div>
     <div class="col-xs-12 col-sm-6 bloc">
       <h2>Ajouter une nouvelle garde</h2>
+        <%= simple_form_for @shift do |f| %>
+          <%= f.input :start_date, label: "Date de garde", as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year] %>
+          <%= f.association :worker, collection: @workers_names, label: "Medecin de garde", as: :select %>
+          <%= f.submit "Nouvelle garde" %>
+        <% end %>
+    </div>
+    <div class="col-xs-12 footer">
+      <p>Projet développé par Paul de Bodinat</p>
+      <%= link_to "Linkedin", "http://www.linkedin.com/in/paul-de-bodinat-61730183"%></p>
+      <%= link_to "Github", "https://github.com/Polo2/" %>
     </div>
   </div>
 </div>
