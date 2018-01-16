@@ -11,13 +11,5 @@ class PagesController < ApplicationController
     @shift = Shift.new
   end
 
-  def about
-
-  end
-
-  private
-
-  def workers_names()
-  end
 
 end
