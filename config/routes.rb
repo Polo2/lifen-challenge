@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'workers/new'
-
-
   root to: 'pages#home'
   resources :workers, only: [:new, :edit, :create]
+  resources :shifts, only: [:new, :edit, :create, :show]
 
   get 'pages/about'
 
