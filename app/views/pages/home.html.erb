@@ -60,7 +60,7 @@
       <h2>Ajouter une nouvelle garde</h2>
         <%= simple_form_for @shift do |f| %>
           <%= f.input :start_date, label: "Date de garde", as: :date, start_year: Date.today.year, end_year: Date.today.year + 1, order: [:day, :month, :year] %>
-          <%= f.association :worker, collection: @workers_names, label: "Medecin de garde", as: :select %>
+          <%= f.association :worker, label: "Medecin de garde", as: :select %>
           <%= f.submit "Nouvelle garde" %>
         <% end %>
     </div>
