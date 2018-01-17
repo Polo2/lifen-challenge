@@ -4,8 +4,7 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    @shift = Shift.new(params_require)
-    @shift.worker = Worker.find(params_require["worker_id"].to_i)
+    @shift = Shift.new(shift_params)
 
     if @shift.save
       redirect_to root_path
@@ -14,7 +13,7 @@ class ShiftsController < ApplicationController
 
   private
 
-  def params_require
+  def shift_params
     params.require(:shift).permit(:start_date, :worker_id)
   end
 end
